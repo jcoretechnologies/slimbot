@@ -1,3 +1,4 @@
+'use strict';
 const EventEmitter = require('eventemitter3');
 const Telegram = require('./telegram');
 
@@ -49,6 +50,7 @@ class Slimbot extends Telegram(EventEmitter) {
       if (updates !== undefined) {
         this._processUpdates(updates);
       }
+      return null;
     })
     .catch(error => {
       if (callback) {
